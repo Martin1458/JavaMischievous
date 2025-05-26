@@ -1,0 +1,3 @@
+cd Folder
+javac -d out *.java
+java -cp out Package.MainFile
