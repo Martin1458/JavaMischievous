@@ -28,11 +28,14 @@ public class Stock {
     }
 
     public void setPrice(double newPrice) {
-        // TODO
+        price = newPrice;
+        notifyWatchers();
     }
 
     private void notifyWatchers() {
-        // TODO
+        for (StockChangeWatcher watcher : watchers) {
+            watcher.priceUpdated(this);
+        }
     }
 
     public boolean addWatcher(StockChangeWatcher watcher) {
